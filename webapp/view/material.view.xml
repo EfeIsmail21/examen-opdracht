@@ -1,0 +1,124 @@
+<mvc:View controllerName="ap.materialslist.controller.material"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+>
+        <Page id="page">
+        <content>
+            <Button
+                icon="sap-icon://activities"
+                type="Transparent"
+                press="onNavToSales"
+                text="Nav to Sales"
+            />
+            <Table
+                id="materialTable"
+                items="{/MaterialSet}"
+                headerText="Materials"
+            >
+                            <headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            text="Materials"
+                            level="H2"
+                        />
+                        <ToolbarSpacer />
+                        <Button
+                            tooltip="Filter"
+                            icon="sap-icon://filter"
+                            press="handleFilterButtonPressed"
+                        />
+                        <Button
+                            icon="sap-icon://excel-attachment"
+                            press="onExport"
+                        />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Material number" />
+                        </VBox>
+                    </Column>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >                        
+                    <VBox>
+                            <Text text="Description" />
+                        </VBox>
+                    </Column>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Group" />
+                        </VBox>
+                    </Column>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Type" />
+                        </VBox>
+                    </Column>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+
+                        <VBox>
+                            <Text text="Industry" />
+                        </VBox>
+                    </Column>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Base UoM" />
+                        </VBox>
+                    </Column>
+                    <Column 
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Purchase UoM" />
+                        </VBox>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Navigation"
+                        vAlign="Middle"
+                        press=".onListItemPress"
+
+                    >
+                        <cells>
+                            <ObjectIdentifier title="{Matnr}" />
+                            <Text text="{Maktx}" />
+                            <Text text="{Matkl}" />
+                            <Text text="{Mtart}" />
+                            <Text text="{Mbrsh}" />
+                            <Text text="{Meins}" />
+                            <Text text="{Bstme}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
